@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 str = "Python is an interpreted, interactive, object-oriented programming\
- language that combines remarkable power with very clear syntax"
-print(str.split(" ")[5], str.split(" ")[6], str.split(" ")[12], str.split(" ")[0])
+ language that combines remarkable power with very clear syntax".split(" ")
+print(str[5], str[6], str[12], str[0])
