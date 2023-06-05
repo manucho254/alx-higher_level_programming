@@ -63,30 +63,3 @@ void free_listint(listint_t *head)
 		free(current);
 	}
 }
-
-
-/**
- * 
- */
-
-int check_cycle(listint_t *list)
-{
-
-	listint_t *nodes;
-	int val;
-
-	if (list == NULL || *list == NULL)
-	{
-		return (0);
-	}
-
-	nodes = malloc(sizeof(listint_t));
-	while (*list)
-	{
-		val = (*list)->n;
-		add_nodeint(nodes, val);
-		(*list) = (*list)->next; 
-	}
-
-	return (0);
-}
