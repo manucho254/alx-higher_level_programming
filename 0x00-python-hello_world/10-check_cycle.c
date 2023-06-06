@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * check_cycle - function to check if there is a cycle in linked list
@@ -16,27 +17,26 @@ int check_cycle(listint_t *list)
 	if (list == NULL)
 		return (0);
 
-	vals = malloc(1 * sizeof(int));
-	vals[0] = 0;
+	vals = malloc(sizeof(int));
 	while (list)
 	{
 		vals = realloc(vals, (i + 1) * sizeof(int));
 		vals[i] = list->n;
-		for (x = 0; x < i; x++)
+		for (x = 1; x <= i; x++)
 		{
 			if (vals[x] == vals[i])
 			{
-				count += 1;
-			}
-			if (count == 2)
-			{
-				free(vals);
-				return (1);
+				count++;
 			}
 		}
+		if (count > 2)
+		{
+			free(vals);
+			return (1);
+		}
 		count = 0;
-		i++;
 		list = list->next;
+		i++;
 	}
 
 	free(vals);
