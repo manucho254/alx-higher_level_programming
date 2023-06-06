@@ -14,7 +14,7 @@ def remove_char_at(string: str, n: int) -> str:
     new = ""
     # check if the index is greater
     # the the length of the string
-    if n > len(string):
+    if n > len(string) or n < 0:
         return string
 
     for x in string:
