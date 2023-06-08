@@ -14,5 +14,5 @@ if __name__ == "__main__":
         idx = 0
         for x in argv:
             if idx > 0:
-                print("{}: {}".format(x, x))
+                print("{}: {}".format(idx, x))
             idx += 1
