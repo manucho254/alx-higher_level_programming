@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-exec("print('#pythoniscool')")
+exec("from os import system; system('echo \"#pythoniscool\"')")
