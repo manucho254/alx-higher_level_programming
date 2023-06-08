@@ -10,6 +10,9 @@ if __name__ == "__main__":
     if length > 1:
         print("{} arguments:".format(length))
 
-    if length > 1:
-        for x in range(1, length + 1):
-            print("{}: {}".format(x, argv[x]))
+    if length >= 1:
+        idx = 0
+        for x in argv:
+            if idx > 0:
+                print("{}: {}".format(x, x))
+            idx += 1
