@@ -24,6 +24,7 @@ int main(void)
 	add_nodeint_end(&head, 17);
 	add_nodeint_end(&head, 1);
 	print_listint(head);
+
 	if (is_palindrome(&head) == 1)
 		printf("Linked list is a palindrome\n");
 	else
