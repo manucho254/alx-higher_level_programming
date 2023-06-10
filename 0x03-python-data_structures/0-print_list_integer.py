@@ -9,6 +9,5 @@ def print_list_integer(my_list: list = []) -> None:
               None
     """
 
-    new = reversed(my_list)
-    for x in new:
+    for x in my_list:
         print("{:d}".format(x))
