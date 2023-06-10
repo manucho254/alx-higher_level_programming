@@ -10,6 +10,6 @@ def print_reversed_list_integer(my_list: list = []) -> None:
               None
     """
 
-    my_list.reverse()
-    for x in my_list:
+    length = len(my_list)
+    for x in range(length, 0, -1):
         print("{}".format(x))
