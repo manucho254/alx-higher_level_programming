@@ -11,7 +11,7 @@ def print_reversed_list_integer(my_list: list = []) -> None:
     """
 
     if len(my_list) == 0:
-        print("None")
-
-    for x in reversed(my_list):
-        print("{:d}".format(x))
+        pass
+    else:
+        for x in reversed(my_list):
+            print("{:d}".format(x))
