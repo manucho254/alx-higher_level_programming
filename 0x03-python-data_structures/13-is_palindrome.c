@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+listint_t *reverse_linked_list(listint_t **head);
 /**
  * is_palindrome - function to check if,
  * linked list is a palindrome.
@@ -13,33 +14,59 @@
 
 int is_palindrome(listint_t **head)
 {
-	int size = 0, *arr, x, i;
+	listint_t *tmp, *rev;
 
 	if (head == NULL)
 		return (1);
-	arr = malloc(sizeof(int));
-	if (arr == NULL)
-		return (0);
 
-	while (*head)
-	{
-		arr = realloc(arr, (size + 1) * sizeof(int));
-		arr[size] = (*head)->n;
-		(*head) = (*head)->next;
-		size++;
-	}
+	tmp = (*head);
+	/** reverse linked list */
+	rev = reverse_linked_list(head);
 
-	i = (size - 1);
-	for (x = 0; x < size; x++)
+	while (tmp && rev)
 	{
-		if (arr[x] != arr[i])
-		{
-			free(arr);
+		/**
+		 * check if values in reverse are the,
+		 * same with values in original list
+		 */
+		if (tmp->n != rev->n)
 			return (0);
-		}
-		i--;
+
+		tmp = tmp->next;
+		rev = rev->next;
 	}
-	free(arr);
 
 	return (1);
+}
+
+/**
+ * reverse_linked_list - function to reverse linked list
+ *
+ * @head: pointer to pointer to linked list
+ *
+ * Return: pointer to linked list
+ */
+
+listint_t *reverse_linked_list(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = (*head);
+	listint_t *next = NULL;
+
+	while (current != NULL)
+	{
+		/** store next */
+		next = current->next;
+
+		/** reverse current node pointer */
+		current->next = prev;
+
+		/** move pointers one position ahead */
+		prev = current;
+		current = next;
+	}
+
+	(*head) = prev;
+
+	return (*head);
 }
