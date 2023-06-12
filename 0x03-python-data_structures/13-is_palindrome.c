@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-listint_t *reverse_linked_list(listint_t **head);
 /**
  * is_palindrome - function to check if,
  * linked list is a palindrome.
@@ -21,6 +20,8 @@ int is_palindrome(listint_t **head)
 		return (1);
 
 	tmp = (*head);
+	if (tmp == NULL)
+		return (1);
 
 	while (*head)
 	{
@@ -37,7 +38,7 @@ int is_palindrome(listint_t **head)
 		x++;
 	}
 
-	i = (size - 1);
+	i = (size);
 	for (x = 0; x < size; x++)
 	{
 		if (arr[x] != arr[i])
@@ -48,36 +49,4 @@ int is_palindrome(listint_t **head)
 	}
 
 	return (1);
-}
-
-/**
- * reverse_linked_list - function to reverse linked list
- *
- * @head: pointer to pointer to linked list
- *
- * Return: pointer to linked list
- */
-
-listint_t *reverse_linked_list(listint_t **head)
-{
-	listint_t *prev = NULL;
-	listint_t *current = (*head);
-	listint_t *next = NULL;
-
-	while (current != NULL)
-	{
-		/** store next */
-		next = current->next;
-
-		/** reverse current node pointer */
-		current->next = prev;
-
-		/** move pointers one position ahead */
-		prev = current;
-		current = next;
-	}
-
-	(*head) = prev;
-
-	return (*head);
 }
