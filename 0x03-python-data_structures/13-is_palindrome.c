@@ -19,11 +19,15 @@ int is_palindrome(listint_t **head)
 	if (head == NULL)
 		return (1);
 
+
 	tmp = (*head);
+	if (tmp == NULL)
+		return (1);
+
 	/** reverse linked list */
 	rev = reverse_linked_list(head);
 
-	while (tmp && rev)
+	while (tmp != NULL && rev != NULL)
 	{
 		/**
 		 * check if values in reverse are the,
