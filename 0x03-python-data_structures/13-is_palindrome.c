@@ -13,7 +13,7 @@
 
 int is_palindrome(listint_t **head)
 {
-	int size = 0, x = 0, i;
+	int size = 0, *arr, x = 0, i;
 	listint_t *tmp;
 
 	if (head == NULL)
@@ -29,7 +29,10 @@ int is_palindrome(listint_t **head)
 		(*head) = (*head)->next;
 	}
 
-	int arr[size];
+	arr = malloc((size + 1) * sizeof(int));
+
+	if (arr == NULL)
+		return (1);
 
 	while (tmp)
 	{
@@ -38,7 +41,7 @@ int is_palindrome(listint_t **head)
 		x++;
 	}
 
-	i = (size);
+	i = (size - 1);
 	for (x = 0; x < size; x++)
 	{
 		if (arr[x] != arr[i])
