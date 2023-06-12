@@ -26,6 +26,8 @@ int is_palindrome(listint_t **head)
 
 	/** reverse linked list */
 	rev = reverse_linked_list(head);
+	if (rev == NULL)
+		return (1);
 
 	while (tmp != NULL && rev != NULL)
 	{

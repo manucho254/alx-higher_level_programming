@@ -13,6 +13,7 @@ int main(void)
 	listint_t *head;
 
 	head = NULL;
+	add_nodeint_end(&head, 1);
 	if (is_palindrome(&head) == 1)
 		printf("Linked list is a palindrome\n");
 	else
