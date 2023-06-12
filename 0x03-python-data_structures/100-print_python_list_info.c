@@ -1,4 +1,4 @@
-#include "/usr/include/python3.4.3/Python.h"
+#include "/usr/include/python3.8/Python.h"
 #include <stdio.h>
 
 /**
@@ -22,7 +22,7 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Size of the Python List = %ld\n", len);
 	printf("[*] Allocated = %ld\n", len);
 
-	for (x = 0; x < size; x++)
+	for (x = 0; x < len; x++)
 	{
 		tmp = PyList_GetItem(p, x);
 		type = Py_TYPE(tmp);
