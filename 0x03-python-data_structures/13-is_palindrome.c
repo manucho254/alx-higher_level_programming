@@ -14,42 +14,37 @@ listint_t *reverse_linked_list(listint_t **head);
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp, *rev;
-	int x, size, mid;
+	int size = 0, x = 0, i;
+	listint_t *tmp;
 
 	if (head == NULL)
 		return (1);
 
-
 	tmp = (*head);
-	if (tmp == NULL)
-		return (1);
 
-	/** reverse linked list */
-	rev = reverse_linked_list(head);
-	if (rev == NULL)
-		return (1);
-
-	size = 0;
 	while (*head)
 	{
-		size += 1;
+		size++;
 		(*head) = (*head)->next;
 	}
 
-	mid = size / 2;
-	while ((tmp && rev) && x != mid)
-	{
-		x++;
-		/**
-		 * check if values in reverse are the,
-		 * same with values in original list
-		 */
-		if (tmp->n != rev->n)
-			return (0);
+	int arr[size];
 
+	while (tmp)
+	{
+		arr[x] = tmp->n;
 		tmp = tmp->next;
-		rev = rev->next;
+		x++;
+	}
+
+	i = (size - 1);
+	for (x = 0; x < size; x++)
+	{
+		if (arr[x] != arr[i])
+		{
+			return (0);
+		}
+		i--;
 	}
 
 	return (1);
