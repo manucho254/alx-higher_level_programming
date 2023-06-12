@@ -38,7 +38,7 @@ int is_palindrome(listint_t **head)
 	}
 
 	mid = size / 2;
-	while (tmp != NULL && rev != NULL && x >= mid)
+	while ((tmp && rev) && x != mid)
 	{
 		x++;
 		/**
