@@ -1,4 +1,4 @@
-#include "/usr/include/python3.4/Python.h"
+#include "Python.h"
 #include <stdio.h>
 
 /**
@@ -16,11 +16,13 @@ void print_python_list_info(PyObject *p)
 	Py_ssize_t len;
 	PyObject *tmp;
 	PyTypeObject *type;
+	PyListObject *list;
 	int x;
 
 	len = PyList_GET_SIZE(p);
+	list = (PyListObject *)p;
 	printf("[*] Size of the Python List = %ld\n", len);
-	printf("[*] Allocated = %ld\n", len);
+	printf("[*] Allocated = %ld\n", list->allocated);
 
 	for (x = 0; x < len; x++)
 	{
