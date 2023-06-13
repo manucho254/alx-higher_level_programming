@@ -9,7 +9,7 @@ def print_matrix_integer(matrix: list = [[]]) -> None:
        Return:
              None
     """
-    if len(matrix) == 0 and len(matrix[0]) == 0:
+    if len(matrix) == 1 and len(matrix[0]) == 0:
         return
     for x in matrix:
         for j in range(len(x)):
