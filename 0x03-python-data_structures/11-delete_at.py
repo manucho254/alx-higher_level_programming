@@ -12,7 +12,7 @@ def delete_at(my_list: list = [], idx: int = 0) -> list:
              return just my_list
     """
 
-    length = len(my_list)
+    length = len(my_list) - 1
 
     if length == 0:
         return my_list
