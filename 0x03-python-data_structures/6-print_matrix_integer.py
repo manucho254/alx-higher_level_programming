@@ -11,8 +11,8 @@ def print_matrix_integer(matrix: list = [[]]) -> None:
     """
 
     for x in matrix:
-        if len(matrix) == 0 and len(x) == 0:
-            return
+        if len(x) == 0:
+            break
         for j in range(len(x)):
             if j == len(x) - 1:
                 print("{:d}".format(x[j]))
