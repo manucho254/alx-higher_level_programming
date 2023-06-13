@@ -10,10 +10,11 @@ def print_matrix_integer(matrix: list = [[]]) -> None:
              None
     """
 
-    if matrix:
-        for x in matrix:
-            for j in range(len(x)):
-                if j == len(x) - 1:
-                    print("{:d}".format(x[j]))
-                else:
-                    print("{:d}".format(x[j]), end=" ")
+    for x in matrix:
+        if len(matrix) == 0 and len(x) == 0:
+            return
+        for j in range(len(x)):
+            if j == len(x) - 1:
+                print("{:d}".format(x[j]))
+            else:
+                print("{:d}".format(x[j]), end=" ")
