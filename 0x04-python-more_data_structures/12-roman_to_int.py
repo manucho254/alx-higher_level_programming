@@ -15,13 +15,19 @@ def roman_to_int(roman_string: str) -> int:
         return 0
 
     roman = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
-    known = {"II": 2, "III": 3, "IV": 4, "VI": 6, "VII": 7, "VIII": 8, "IX": 9}
-    result = 0
+    result = []
 
-    if roman_string in known:
-        return known[roman_string]
+    for val in roman_string:
+        result.append(roman[val])
 
-    for x in roman_string:
-        result += roman[x]
+    for x in range(len(result) - 1):
+        if result[x] < result[x + 1]:
+            result[x] = result[x + 1] - result[x]
+            result[x + 1] = 0
 
-    return result
+    for i in range(len(result) - 1):
+        if result[i] < result[i + 1]:
+            result[i] = result[i + 1] - result[i]
+            result[i + 1] = 0
+
+    return sum(result)
