@@ -12,7 +12,7 @@ def update_dictionary(a_dictionary: dict, key, value) -> dict:
     """
 
     if not a_dictionary:
-        return {key: value}
+        return {}
 
     a_dictionary[key] = value
 
