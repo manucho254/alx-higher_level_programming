@@ -30,4 +30,9 @@ def roman_to_int(roman_string: str) -> int:
             result[i] = result[i + 1] - result[i]
             result[i + 1] = 0
 
+    for i in range(len(result) - 1):
+        if result[i] < result[i + 1]:
+            result[i] = result[i + 1] - result[i]
+            result[i + 1] = 0
+
     return sum(result)
