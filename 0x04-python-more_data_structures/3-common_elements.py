@@ -1,4 +1,4 @@
-#!/usr/bin/pytjon3
+#!/usr/bin/python3
 
 def common_elements(set_1: set, set_2: set) -> set:
     """ function that returns a set of common,
