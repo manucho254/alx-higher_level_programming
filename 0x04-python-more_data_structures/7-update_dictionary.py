@@ -16,4 +16,4 @@ def update_dictionary(a_dictionary: dict, key, value):
             a_dictionary[key] = value
         return a_dictionary
 
-    return {key: value}
+    return None
