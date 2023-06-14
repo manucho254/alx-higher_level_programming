@@ -11,13 +11,10 @@ def best_score(a_dictionary: dict):
               key with biggest integer else return None
     """
 
-    if a_dictionary is None:
-        return None
-
-    max_val = max(a_dictionary.values())
-
-    for x in a_dictionary:
-        if a_dictionary[x] == max_val:
-            return x
+    if a_dictionary:
+        max_val = max(a_dictionary.values())
+        for x in a_dictionary:
+            if a_dictionary[x] == max_val:
+                return x
 
     return None
