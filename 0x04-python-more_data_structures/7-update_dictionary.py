@@ -11,8 +11,8 @@ def update_dictionary(a_dictionary: dict, key, value):
           updated dictionary
     """
 
-    if a_dictionary:
-        a_dictionary[key] = value
-        return a_dictionary
+    if not a_dictionary:
+        return {key: value}
 
+    a_dictionary[key] = value
     return a_dictionary
