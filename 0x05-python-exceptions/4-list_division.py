@@ -12,11 +12,11 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
     """
     res = 0
     new_list = []
-    types = [int, float]
+    types = (float, int)
     try:
         for x in range(list_length):
             a, b = my_list_1[x], my_list_2[x]
-            if type(a) not in types or type(b) not in types:
+            if not isinstance(a, types) or not isinstance(b, types):
                 print("wrong type")
                 new_list.append(0)
             elif b == 0:
