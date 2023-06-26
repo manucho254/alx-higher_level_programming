@@ -15,6 +15,8 @@ def safe_function(fct, *args):
              the error precede by Exception:
     """
     res = None
+    if args is None:
+        return None
     try:
         res = fct(args[0], args[1])
     except Exception as e:
