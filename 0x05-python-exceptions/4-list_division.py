@@ -15,6 +15,8 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
     types = (float, int)
 
     if my_list_1 is None or my_list_2 is None:
+        for x in range(list_length):
+            new_list.append(0)
         return new_list
     try:
         for x in range(list_length):
