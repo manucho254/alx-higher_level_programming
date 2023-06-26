@@ -19,11 +19,9 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
             if b == 0:
                 print("division by 0")
                 new_list.append(0)
-                continue
             elif type(a) not in types or type(b) not in types:
                 print("wrong type")
                 new_list.append(0)
-                continue
             else:
                 res = a / b
                 new_list.append(res)
