@@ -26,7 +26,8 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
                 res = a / b
                 new_list.append(res)
     except Exception as e:
-        print("out of range")
-        new_list.append(0)
+        if isinstance(e, IndexError):
+            print("out of range")
+            new_list.append(0)
     finally:
         return new_list
