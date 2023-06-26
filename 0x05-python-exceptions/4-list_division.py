@@ -19,12 +19,13 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
             if not isinstance(a, types) or not isinstance(b, types):
                 print("wrong type")
                 new_list.append(0)
-            elif b == 0:
+                continue
+            if b == 0:
                 print("division by 0")
                 new_list.append(0)
-            else:
-                res = a / b
-                new_list.append(res)
+                continue
+            res = a / b
+            new_list.append(res)
     except Exception as e:
         if isinstance(e, IndexError):
             print("out of range")
