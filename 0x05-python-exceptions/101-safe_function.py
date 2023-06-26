@@ -14,7 +14,7 @@ def safe_function(fct, *args):
              the function and prints in stderr,
              the error precede by Exception:
     """
-    if fct is None:
+    if fct is None or len(args) == 0:
         return None
     res = None
     try:
