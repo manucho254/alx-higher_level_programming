@@ -13,8 +13,6 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
     res = 0
     new_list = []
     types = [int, float]
-    if list_length == 0:
-        return new_list
     try:
         for x in range(list_length):
             a, b = my_list_1[x], my_list_2[x]
