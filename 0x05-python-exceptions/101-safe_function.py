@@ -16,10 +16,9 @@ def safe_function(fct, *args):
     """
     if not fct or len(args) == 0:
         return None
-    res = None
     try:
         res = fct(args[0], args[1])
+        return res
     except Exception as e:
         print(f"Exception: {e}", file=stderr)
-
-    return res
+        return None
