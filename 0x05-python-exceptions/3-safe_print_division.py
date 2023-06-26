@@ -20,6 +20,6 @@ def safe_print_division(a: int, b: int):
         pass
 
     finally:
-        print("Inside result: {}".format(res if res else None))
+        print("Inside result: {}".format(None if res is None else res))
 
     return res
