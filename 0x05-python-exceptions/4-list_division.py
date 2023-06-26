@@ -16,11 +16,11 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
     try:
         for x in range(list_length):
             a, b = my_list_1[x], my_list_2[x]
-            if b == 0:
-                print("division by 0")
-                new_list.append(0)
-            elif type(a) not in types or type(b) not in types:
+            if type(a) not in types or type(b) not in types:
                 print("wrong type")
+                new_list.append(0)
+            elif b == 0:
+                print("division by 0")
                 new_list.append(0)
             else:
                 res = a / b
@@ -30,3 +30,5 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
         new_list.append(0)
     finally:
         return new_list
+
+    return new_list
