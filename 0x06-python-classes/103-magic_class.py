@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import math
 
-""" MagicClass - Turn Opcodes to the class below
+""" MagicClass Turn Opcodes to the class below
 """
 
 
