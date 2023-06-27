@@ -14,18 +14,8 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
     new_list = []
     types = (float, int)
 
-    if len(my_list_1) == 0:
-        for i in range(list_length):
-            new_list.append(0)
-        return new_list
-
-    if len(my_list_2) == 0:
-        for j in range(list_length):
-            new_list.append(0)
-        return new_list
-
-    try:
-        for x in range(list_length):
+    for x in range(list_length):
+        try:
             a, b = my_list_1[x], my_list_2[x]
             if not isinstance(a, types) or not isinstance(b, types):
                 print("wrong type")
@@ -37,9 +27,9 @@ def list_division(my_list_1: list, my_list_2: list, list_length: int):
                 continue
             res = a / b
             new_list.append(res)
-    except Exception as e:
-        if isinstance(e, IndexError):
+        except Exception as e:
             print("out of range")
             new_list.append(0)
-    finally:
-        return new_list
+        finally:
+            continue
+    return new_list
