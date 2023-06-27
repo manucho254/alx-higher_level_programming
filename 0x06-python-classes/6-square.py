@@ -82,9 +82,8 @@ class Square:
             print("")
         area = self.area()  # area of the square
         while area != 0:
-            if self.__position[1] <= 0:
-                for i in range(self.__position[0]):
-                    print(" ", end="")
+            if self.__position[1] < 10:
+                print(" " * self.__position[0], end="")
             for x in range(self.__size):
                 print("#", end="")
             print("")
