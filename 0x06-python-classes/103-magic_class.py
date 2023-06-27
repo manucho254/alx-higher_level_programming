@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import math
 
 """ MagicClass Turn Opcodes to the class below
 """
+import math
 
 
 class MagicClass:
