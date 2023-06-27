@@ -27,6 +27,8 @@ class MagicClass:
 
             Args:
                 radius: radius of a circle
+            Return:
+                area of a circle
         """
         return self.__radius ** 2 * math.pi
 
@@ -35,5 +37,7 @@ class MagicClass:
 
             Args:
                 radius: radius of a circle.
+            Return:
+                circumference of a circle
         """
         return 2 * math.pi * self.__radius
