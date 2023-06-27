@@ -6,13 +6,16 @@ import math
 
 
 class MagicClass:
-    """ defines a class to calcut
+    """ defines a class to calcute
+
+        Attributes:
+                  __radius: radius of a circle.
     """
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """ Initialize MagicClass.
 
-            Attributes:
-                      __radius: radius of a circle.
+            Args:
+                 radius: radius of a circle.
         """
         self.__radius = 0
         if type(radius) is not int or type(radius) is not float:
