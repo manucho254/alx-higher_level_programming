@@ -80,9 +80,10 @@ class Square:
         """
         if self.__size == 0:
             print("")
+            return
         area = self.area()  # area of the square
         while area != 0:
-            if self.__position[1] < 10:
+            if self.__position[1] < 1:
                 print(" " * self.__position[0], end="")
             for x in range(self.__size):
                 print("#", end="")
@@ -102,6 +103,7 @@ class Square:
             Args:
                 value: tuple with new position values
         """
-        if type(value) != tuple or len(value) != 2:
+        if isinstance(value, tuple) and len == 2:
+            self.__position = value
+        else:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
