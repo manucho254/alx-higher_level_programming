@@ -3,7 +3,6 @@
 """ MagicClass Turn Opcodes to the class below
 """
 import math
-import dis
 
 
 class MagicClass:
@@ -43,6 +42,3 @@ class MagicClass:
                 circumference of a circle
         """
         return 2 * math.pi * self.__radius
-
-
-dis.dis(MagicClass)
