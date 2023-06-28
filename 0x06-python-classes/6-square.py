@@ -76,16 +76,13 @@ class Square:
                 - position should be use by using space,
                 - if position[1] > 0 don't fill the lines
         """
-        if self.__size == 0:
-            print("")
-            return
         area = self.area()  # area of the square
         while area != 0:
-            if self.__position[1] <= 1:
-                print(" " * self.__position[0], end="")
+            for i in range(self.__position[0]):
+                print(" ", end="")
             for x in range(self.__size):
                 print("#", end="")
-            print("")
+            print()
             area -= self.__size
 
     @property
