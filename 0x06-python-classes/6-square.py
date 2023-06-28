@@ -38,8 +38,6 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        if type(position) != tuple or len(position) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = position
 
@@ -83,7 +81,7 @@ class Square:
             return
         area = self.area()  # area of the square
         while area != 0:
-            if self.__position[1] < 1:
+            if self.__position[1] == 0:
                 print(" " * self.__position[0], end="")
             for x in range(self.__size):
                 print("#", end="")
@@ -103,7 +101,8 @@ class Square:
             Args:
                 value: tuple with new position values
         """
-        if isinstance(value, tuple) and len == 2:
-            self.__position = value
-        else:
+        if not isinstance(value, tuple) or len != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
