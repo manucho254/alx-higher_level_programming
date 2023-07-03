@@ -94,7 +94,7 @@ class Rectangle:
             Return:
                   ngle.pyation of a circle
         """
-        if self.__height == 0 or self.__width == 0 or self.print_symbol is None:
+        if self.__height == 0 or self.__width == 0:
             return ""
 
         arr = []
