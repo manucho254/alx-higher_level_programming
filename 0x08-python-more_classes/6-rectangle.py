@@ -5,6 +5,7 @@
 
 
 class Rectangle:
+    number_of_instances = 0
     """ class Rectangle
 
         Attributes:
@@ -12,8 +13,6 @@ class Rectangle:
                   __height: height of rectangle
                   number_of_instances: hold value for number of instances created
     """
-    number_of_instances = 0
-
     def __init__(self, width=0, height=0):
         """ initialize class
             Args:
