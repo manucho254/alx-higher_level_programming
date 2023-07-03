@@ -91,6 +91,7 @@ class Rectangle:
 
         return (self.__height * 2) + (self.__width * 2)
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """ compare two Rectangle objects
             Args:
