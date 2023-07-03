@@ -19,6 +19,8 @@ class Rectangle:
             Args:
                 width: width of a rectangle
                 height: height of a rectangle
+            Attributes:
+                 number_of_instances: number of class instances
         """
         type(self).number_of_instances += 1
         if not isinstance(width, int):
@@ -115,6 +117,8 @@ class Rectangle:
     def __del__(self):
         """ distructor function called,
             when instance is about to be destroyed
+            Attributes:
+                      number_of_instances: number of class instances
         """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
