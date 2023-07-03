@@ -91,12 +91,13 @@ class Rectangle:
         """
         if self.__height == 0 or self.__width == 0:
             return ""
+
         arr = []
         for x in range(self.__height):
             tmp = ("#" * self.__width)
-            if x != self.__height - 1:
-                tmp = tmp + "\n"
             arr.append(tmp)
+            if x != self.__height - 1:
+                arr.append("\n")
 
         return "".join(arr)
 

@@ -10,8 +10,10 @@ class Rectangle:
                   width: the width of the rectangle
                   height: height of rectangle
                   number_of_instances: hold value for number of instances created
+                  print_symbol: symbol to print rectangle with
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """ initialize class
@@ -98,10 +100,11 @@ class Rectangle:
 
         arr = []
         for x in range(self.__height):
-            tmp = ("#" * self.__width)
-            arr.append(tmp)
+            tmp = (self.print_symbol * self.__width)
+            arr.append(f"{tmp}")
             if x != self.__height - 1:
                 arr.append("\n")
+
         return "".join(arr)
 
     def __repr__(self):
