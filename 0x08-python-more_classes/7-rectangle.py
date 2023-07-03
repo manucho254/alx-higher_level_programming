@@ -93,17 +93,18 @@ class Rectangle:
     def __str__(self):
         """ print rectangle
             Return:
-                  a string string representation of a circle
+                  ngle.pyation of a circle
         """
         if self.__height == 0 or self.__width == 0:
             return ""
 
         arr = []
-        for x in range(self.__height):
-            tmp = (self.print_symbol * self.__width)
-            arr.append(f"{tmp}")
-            if x != self.__height - 1:
-                arr.append("\n")
+        if self.print_symbol:
+            for x in range(self.__height):
+                tmp = (self.print_symbol * self.__width)
+                arr.append(f"{tmp}")
+                if x != self.__height - 1:
+                    arr.append("\n")
 
         return "".join(arr)
 
