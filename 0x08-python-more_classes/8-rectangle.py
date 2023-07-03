@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 """ class Rectangle that defines a rectangle
+    Attributes:
+              number_of_instances: hold value for number of instances created
+              print_symbol": symbol to print rectangle with
 """
 
 
