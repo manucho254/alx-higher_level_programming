@@ -9,10 +9,7 @@
 
 class Rectangle:
     """ class Rectangle
-
         Attributes:
-                  __width: the width of the rectangle
-                  __height: height of rectangle
                   number_of_instances: hold value for number of instances created
                   print_symbol: symbol to print rectangle with
     """
