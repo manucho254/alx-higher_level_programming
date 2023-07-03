@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 
-""" get sum of two integers
-    Args:
-        a: value a can be an integer or float
-        b: value be can be an integer or float
+""" module to get sum of two integers
 """
 
 
 def add_integer(a, b=98) -> int:
-    """Return:
-             an integer representing the sum of a and b
+    """ get sum of integers
+        Args:
+            a: value a can be an integer or float
+            b: value be can be an integer or float
+        Return:
+            an integer representing the sum of a and b
     """
 
     # check if a is not an int or a float

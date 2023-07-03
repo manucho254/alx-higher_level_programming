@@ -9,7 +9,8 @@
 
 
 def text_indentation(text: str) -> None:
-    """ print a text with 2 new lines after each of these characters: ., ? and :
+    """ print a text with 2 new lines after each of,
+        these characters: ., ? and :
         Args:
             text: string to find subtext to print
     """

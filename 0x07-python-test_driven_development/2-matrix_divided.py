@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
-""" divide all elements of a matrix.
-    Args:
-         matrix: lists of lists of integers/floats
-         div: value of the divide with
+""" module to divide all elements of a matrix.
 """
 
 
 def matrix_divided(matrix, div):
-    """ Return:
+    """ divide all elements of a matrix
+        Args:
+             matrix: a list of lists of integers and floats
+             div: value to divide elements by.
+        Return:
               a new matrix
     """
     new = []

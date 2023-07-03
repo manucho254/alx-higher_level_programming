@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
 """ function that prints a square with the character #
-   Args:
-       size: the dimension of the square
 """
+
 
 def print_square(size):
     """ print a square with the character #

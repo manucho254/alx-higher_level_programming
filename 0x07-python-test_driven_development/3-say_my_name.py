@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
-""" say_my_name(first_name, last_name=""):
-    Args:
-        first_name: the first name
-        last_name: the last_name
+""" module that prints My name is <first name> <last name>
 """
 
 
-def say_my_name(first_name, last_name=""):
+def say_my_name(first_name: str, last_name: str = "") -> None:
     """ print My name is <first name> <last name>
+        Args:
+            first_name: persons firstname
+            last_name: persons lastname
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
