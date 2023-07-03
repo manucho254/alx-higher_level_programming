@@ -94,16 +94,15 @@ class Rectangle:
             Return:
                   ngle.pyation of a circle
         """
-        if self.__height == 0 or self.__width == 0:
+        if self.__height == 0 or self.__width == 0 or self.print_symbol is None:
             return ""
 
         arr = []
-        if self.print_symbol:
-            for x in range(self.__height):
-                tmp = (self.print_symbol * self.__width)
-                arr.append(f"{tmp}")
-                if x != self.__height - 1:
-                    arr.append("\n")
+        for x in range(self.__height):
+            tmp = (self.print_symbol * self.__width)
+            arr.append(f"{tmp}")
+            if x != self.__height - 1:
+                arr.append("\n")
 
         return "".join(arr)
 
