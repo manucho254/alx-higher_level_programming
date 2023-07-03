@@ -19,7 +19,6 @@ class Rectangle:
                 width: width of a rectangle
                 height: height of a rectangle
         """
-        type(self).number_of_instances += 1
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         if width < 0:
@@ -30,6 +29,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__width = width
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
