@@ -99,11 +99,10 @@ class Rectangle:
 
         arr = []
         for x in range(self.__height):
-            tmp = (self.print_symbol * self.__width)
-            arr.append(f"{tmp}")
+            for _ in range(self.__width):
+                arr.append(str(self.print_symbol))
             if x != self.__height - 1:
                 arr.append("\n")
-
         return "".join(arr)
 
     def __repr__(self):
