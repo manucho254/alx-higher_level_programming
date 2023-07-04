@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def magic_string():
-    return "BestSchool"
+    global i
+    return "BestSchool, " * i + "BestSchool"
