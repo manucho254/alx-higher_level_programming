@@ -9,14 +9,16 @@
 class LockedClass:
     """ defines class LockedClass
     """
+    __slots__ = ["first_name"]
+
     def __setattr__(self, name, value):
-        """ setter to set new firstname
+        """setter to set new firstname
             Args:
                 name: name of the new attribute
                 value: value for new attribute
         """
         if name == "first_name":
-            self.__dict__[name] = value
+            self.__slots__[0] = value
         else:
             message = f"'LockedClass' object has no attribute '{name}'"
             raise AttributeError(message)
