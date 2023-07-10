@@ -11,7 +11,7 @@ class MyList(list):
         """ print list sorted in ascending order
         """
         for x in self:
-            if not isintance(x, int):
+            if not isinstance(x, int):
                 print(self)
                 break;
 
