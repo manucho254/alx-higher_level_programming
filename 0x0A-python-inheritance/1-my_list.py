@@ -14,8 +14,6 @@ class MyList(list):
         if self is None:
             return
 
-        if any(not isinstance(x, int) for x in self):
-            print(self)
-            return
-
-        print(sorted(self))
+        arr = self.copy()
+        arr.sort()
+        print(arr)
