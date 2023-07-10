@@ -69,7 +69,7 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
-    """ Class Rectangle that defines a Square
+    """ Class Square that defines a square
     """
 
     def __init__(self, size):
