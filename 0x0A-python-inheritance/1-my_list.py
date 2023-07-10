@@ -10,11 +10,11 @@ class MyList(list):
     def print_sorted(self):
         """ print list sorted in ascending order
         """
-        if any(type(x) != int and not isinstance(x, int) for x in self):
-            print(self)
+        if not self:
             return
 
-        if self is None:
+        if any(type(x) != int and not isinstance(x, int) for x in self):
+            print(self)
             return
 
         print(sorted(self))
