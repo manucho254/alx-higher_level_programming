@@ -11,6 +11,10 @@ class MyList(list):
         """ print list sorted in ascending order
         """
 
+        if any(not isinstance(x, int) for x in self):
+            print(self)
+            return
+
         arr = self.copy()
         arr.sort()
         print(arr)
