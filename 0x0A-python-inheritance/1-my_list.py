@@ -14,7 +14,7 @@ class MyList(list):
         if self is None:
             return
 
-        if any(type(x) != int and not isinstance(x, int) for x in self):
+        if any(not isinstance(x, int) for x in self):
             print(self)
             return
 
