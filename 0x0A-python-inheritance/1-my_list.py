@@ -7,6 +7,7 @@
 class MyList(list):
     """ defines MyList and inherits from list
     """
+
     def print_sorted(self):
         """ print list sorted in ascending order
         """

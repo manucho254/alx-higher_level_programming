@@ -3,6 +3,10 @@
        - Public instance method: def print_sorted(self): that prints the list, but sorted (ascending sort)
 
 >>> MyList = __import__('1-my_list').MyList
+>>> MyList.__doc__
+ defines MyList and inherits from list
+>>> MyList.print_sorted.__doc__
+ print list sorted in ascending order
 >>> my_list = MyList()
 >>> my_list
 []
