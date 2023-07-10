@@ -23,3 +23,25 @@ class BaseGeometry:
             raise TypeError("<name> must be an integer")
         if value <= 0:
             raise ValueError("<name> must be greater than 0")
+
+
+""" class Rectangle
+"""
+
+
+class Rectangle(BaseGeometry):
+    """ class Rectangle that defines a rectangle
+    """
+
+    def __init__(self, width, height):
+        """ initialize class
+            Args:
+                width: width of rectangle
+                height: height of rectangle
+        """
+        super().__init__()
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+
+        self.__width = width
+        self.__height = height
