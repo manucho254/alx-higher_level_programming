@@ -30,5 +30,10 @@
 ['l', 'o', 'o', 'k']
 >>> my_list.print_sorted()
 ['k', 'l', 'o', 'o']
+>>> my_list = MyList("")
+>>> my_list
+[]
+>>> my_list.print_sorted()
+[]
 
 """
