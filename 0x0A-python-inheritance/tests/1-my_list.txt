@@ -37,11 +37,17 @@ testing for list of integers
 >>> my_list.print_sorted()
 [-5, -4, -3, -2, -1]
 
+testing sortring strings in list
 >>> my_list = MyList("look")
 >>> my_list
 ['l', 'o', 'o', 'k']
 >>> my_list.print_sorted()
 ['k', 'l', 'o', 'o']
+>>> my_list = MyList(["cool", "fun", "nice", "happy"])
+>>> my_list
+['cool', 'fun', 'nice', 'happy']
+>>> my_list.print_sorted()
+['cool', 'fun', 'happy', 'nice']
 >>> my_list = MyList("")
 >>> my_list
 []
@@ -58,5 +64,8 @@ testing for invoking print_sorted with an argument
 Traceback (most recent call last):
     ...
 TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+>>> my_list.print_sorted
+<bound method MyList.print_sorted of [1, 8, 5, 2]>
 
 """
