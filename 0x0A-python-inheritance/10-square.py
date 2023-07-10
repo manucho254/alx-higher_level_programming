@@ -34,9 +34,6 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """ class Rectangle that defines a rectangle
-        Attributes:
-                   width: width of rectangle
-                   height: height of rectangle
     """
 
     def __init__(self, width, height):
@@ -73,8 +70,6 @@ class Rectangle(BaseGeometry):
 
 class Square(Rectangle):
     """ Class Rectangle that defines a Square
-        Attributes:
-                  size: size of a square
     """
 
     def __init__(self, size):
