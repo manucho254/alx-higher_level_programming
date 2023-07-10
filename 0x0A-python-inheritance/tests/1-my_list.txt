@@ -25,5 +25,10 @@
 [-1, -2, -3, -4, -5]
 >>> my_list.print_sorted()
 [-5, -4, -3, -2, -1]
+>>> my_list = MyList("look")
+>>> my_list
+['l', 'o', 'o', 'k']
+>>> my_list.print_sorted()
+['k', 'l', 'o', 'o']
 
 """
