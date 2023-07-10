@@ -11,4 +11,7 @@ class MyList(list):
         """ print list sorted in ascending order
         """
 
+        if self is None:
+            return
+
         print(sorted(self))
