@@ -35,5 +35,9 @@
 []
 >>> my_list.print_sorted()
 []
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+   ...
+TypeError: 'NoneType' object is not iterable
 
 """
