@@ -23,6 +23,6 @@ class BaseGeometry:
         is_instance = isinstance(value, int)
         is_subclass = issubclass(val_type, int)
         if not is_instance or val_type != int or not is_subclass:
-            raise TypeError("<name> must be an integer")
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("<name> must be greater than 0")
+            raise ValueError(f"{name} must be greater than 0")
