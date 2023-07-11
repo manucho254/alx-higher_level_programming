@@ -24,6 +24,7 @@ def get_metrics():
 
     try:
         for line in sys.stdin:
+            file_size += int(status[-1])
             for j in status_codes:
                 if j in line:
                     status_codes[j] += 1
@@ -33,8 +34,8 @@ def get_metrics():
                 for x, y in status_codes.items():
                     sys.stdout.write(f"{x}: {y}\n")
 
-            file_size += int(status[-1])
             line_count += 1
+            sys.stdout.flush()
 
     except KeyboardInterrupt:
         sys.stdout.write(f"File size: {file_size}\n")
