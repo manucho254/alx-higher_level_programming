@@ -36,6 +36,12 @@ class Student:
                 json: json data
         """
         if json is not None:
-            self.first_name = json.get("first_name")
-            self.last_name = json.get("last_name")
-            self.age = json.get("age")
+            first_name = json.get("first_name")
+            last_name = json.get("last_name")
+            age = json.get("age")
+            if first_name:
+                self.first_name = json.get("first_name")
+            if last_name:
+                self.last_name = json.get("last_name")
+            if age:
+                self.age = json.get("age")
