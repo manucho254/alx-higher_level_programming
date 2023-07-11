@@ -11,8 +11,6 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 def add_to_file():
     """ add all command line arguments to python list
-        Return:
-              the list data
     """
     args = sys.argv
     arr = []  # initialize array
