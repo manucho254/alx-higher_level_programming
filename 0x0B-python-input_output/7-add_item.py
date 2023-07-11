@@ -28,5 +28,4 @@ def add_to_file():
         save_to_json_file(arr, filename)
 
 
-if __name__ == "__main__":
-    add_to_file()
+add_to_file()
