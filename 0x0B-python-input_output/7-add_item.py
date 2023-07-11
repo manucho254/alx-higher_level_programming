@@ -25,19 +25,12 @@ def add_to_file():
             arr.append(args[x])
 
     try:
-        with open(filename, 'r') as f:
-
-            data = json.loads(f.read().strip("\n"))
-            data.extend(arr)
-
+        data = load_from_json_file(filename)
+        data.extend(arr)
         save_to_json_file(data, filename)
-
-    except FileNotFoundError as e:
+    except Exception as e:
         with open(filename, 'w') as f:
             f.write(json.dumps(arr))
-        data = load_from_json_file(filename)
-
-    return data
 
 
 if __name__ == "__main__":
