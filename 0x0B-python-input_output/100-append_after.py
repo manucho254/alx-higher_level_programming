@@ -25,7 +25,7 @@ def append_after(filename="", search_string="", new_string=""):
     length = len(data)
     for x in range(length):
         if x == length - 1:
-            if data[x - 1].find(search_string) >= 0:
+            if data[x].find(search_string) >= 0:
                 data.append(new_string)
             break
         else:
