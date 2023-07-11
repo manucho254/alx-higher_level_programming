@@ -27,8 +27,7 @@ def add_to_file():
         data.extend(arr)
         save_to_json_file(data, filename)
     except Exception as e:
-        with open(filename, 'w') as f:
-            f.write(json.dumps(arr))
+        save_to_json_file(arr, filename)
 
 
 if __name__ == "__main__":
