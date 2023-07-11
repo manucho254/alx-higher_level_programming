@@ -21,9 +21,14 @@ def append_after(filename="", search_string="", new_string=""):
     """ loop through array adding new string text
         if search string is found
     """
-    for x in range(len(data) - 1):
+    length = len(data)
+
+    if length == 0:
+        return
+
+    for x in range(length - 1):
         if search_string in data[x]:
-            if x != len(data) - 1:
+            if x != length - 1:
                 data.insert(x + 1, new_string)
 
     with open(filename, "w") as f:
