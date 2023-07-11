@@ -2,7 +2,6 @@
 
 """ module that returns the dictionary description.
 """
-import json
 
 
 def class_to_json(obj):
@@ -12,4 +11,4 @@ def class_to_json(obj):
         Reyurn:
              the dictionary description
     """
-    return json.dumps(obj.__dict__)
+    return obj.__dict__
