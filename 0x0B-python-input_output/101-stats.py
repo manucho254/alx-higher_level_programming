@@ -3,7 +3,6 @@
 """ module Write a script that reads stdin line by line and computes metrics.
 """
 import sys
-import json
 
 
 def get_metrics():
@@ -30,17 +29,17 @@ def get_metrics():
                     status_codes[j] += 1
             status = line.strip("\n").split(" ")
             if line_count > 0 and line_count % 10 == 0:
-                print(f"File size: {file_size}")
+                sys.stdout.write(f"File size: {file_size}")
                 for x, y in status_codes.items():
-                    print(f"{x}: {y}")
+                    sys.stdout.write(f"{x}: {y}")
 
             file_size += int(status[-1])
             line_count += 1
 
     except KeyboardInterrupt:
-        print(f"File size: {file_size}")
+        sys.stdout.write(f"File size: {file_size}")
         for x, y in status_codes.items():
-            print(f"{x}: {y}")
+            sys.stdout.write(f"{x}: {y}")
         raise
 
 
