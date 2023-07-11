@@ -4,7 +4,7 @@
 """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """ defines BaseGeometry class
     """
 
@@ -42,7 +42,6 @@ class Rectangle(BaseGeometry):
                 width: width of rectangle
                 height: height of rectangle
         """
-        super().__init__()
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
