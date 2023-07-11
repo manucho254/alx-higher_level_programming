@@ -5,6 +5,19 @@
 import sys
 
 
+def print_data(status_codes: dict, file_size: int):
+    """ print data to stdout
+        Args:
+            status_codes: a dict with status codes
+            file_size: the size of file
+    """
+    sys.stdout.write(f"File size: {file_size}\n")
+    for x, y in status_codes.items():
+        sys.stdout.write(f"{x}: {y}\n")
+        sys.stdout.flush()
+    sys.stdout.flush()
+
+
 def get_metrics():
     """ script that reads stdin line by line and computes metrics
     """
@@ -24,25 +37,19 @@ def get_metrics():
 
     try:
         for line in sys.stdin:
-            file_size += int(status[-1])
             for j in status_codes:
                 if j in line:
                     status_codes[j] += 1
             status = line.strip("\n").split(" ")
             if line_count > 0 and line_count % 10 == 0:
-                sys.stdout.write(f"File size: {file_size}\n")
-                for x, y in status_codes.items():
-                    sys.stdout.write(f"{x}: {y}\n")
+                print_data(status_codes, file_size)
 
+            file_size += int(status[-1])
             line_count += 1
-            sys.stdout.flush()
 
     except KeyboardInterrupt:
-        sys.stdout.write(f"File size: {file_size}\n")
-        for x, y in status_codes.items():
-            sys.stdout.write(f"{x}: {y}\n")
+        print_data(status_codes, file_size)
         raise
 
 
-if __name__ == "__main__":
-    get_metrics()
+get_metrics()
