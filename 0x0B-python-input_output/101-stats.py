@@ -29,17 +29,17 @@ def get_metrics():
                     status_codes[j] += 1
             status = line.strip("\n").split(" ")
             if line_count > 0 and line_count % 10 == 0:
-                sys.stdout.write(f"File size: {file_size}")
+                sys.stdout.write(f"File size: {file_size}\n")
                 for x, y in status_codes.items():
-                    sys.stdout.write(f"{x}: {y}")
+                    sys.stdout.write(f"{x}: {y}\n")
 
             file_size += int(status[-1])
             line_count += 1
 
     except KeyboardInterrupt:
-        sys.stdout.write(f"File size: {file_size}")
+        sys.stdout.write(f"File size: {file_size}\n")
         for x, y in status_codes.items():
-            sys.stdout.write(f"{x}: {y}")
+            sys.stdout.write(f"{x}: {y}\n")
         raise
 
 
