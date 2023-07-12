@@ -28,8 +28,16 @@ def get_metrics():
 
     try:
         for line in sys.stdin:
-            status = line.strip("\n").split(" ")
-            code = status[-2]
+            message = line.split()
+            line_count += 1
+
+            # if len(message) less than 2 go to the next iteration
+            if len(message) < 2:
+                line_count += 1
+                continue
+
+            code = message[-2]  # status code
+            size = message[-1]  # file size
 
             if code.isnumeric():
                 if code not in status_codes:
@@ -37,10 +45,9 @@ def get_metrics():
                 else:
                     status_codes[code] += 1
 
-            if status[-1].isnumeric():
-                file_size += int(status[-1])
+            if size.isnumeric():
+                file_size += int(size)
 
-            line_count += 1
             if line_count % 10 == 0:
                 print_data(dict(sorted(status_codes.items())), file_size)
 
