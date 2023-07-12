@@ -52,7 +52,7 @@ def get_metrics():
                 print_data(dict(sorted(status_codes.items())), file_size)
 
         # for cases where we have only one line in file
-        if line_count == 1:
+        if line_count == 1 or len(status_codes) == 0:
             print_data(status_codes, file_size)
 
     except KeyboardInterrupt:
