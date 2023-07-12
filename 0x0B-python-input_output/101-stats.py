@@ -31,10 +31,11 @@ def get_metrics():
             status = line.strip("\n").split(" ")
             code = status[-2]
 
-            if code not in status_codes:
-                status_codes[code] = 1
-            else:
-                status_codes[code] += 1
+            if code.isnumeric():
+                if code not in status_codes:
+                    status_codes[code] = 1
+                else:
+                    status_codes[code] += 1
 
             if status[-1].isnumeric():
                 file_size += int(status[-1])
