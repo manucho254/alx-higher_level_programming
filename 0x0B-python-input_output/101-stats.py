@@ -36,12 +36,16 @@ def get_metrics():
             else:
                 status_codes[code] += 1
 
-            if line_count > 0 and line_count % 10 == 0:
-                print_data(dict(sorted(status_codes.items())), file_size)
-
             if status[-1].isnumeric():
                 file_size += int(status[-1])
+
             line_count += 1
+            if line_count % 10 == 0:
+                print_data(dict(sorted(status_codes.items())), file_size)
+
+        # for cases where we have only one line in file
+        if line_count == 1:
+            print_data(status_codes, file_size)
 
     except KeyboardInterrupt:
         print_data(dict(sorted(status_codes.items())), file_size)
