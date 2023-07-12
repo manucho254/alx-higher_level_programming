@@ -24,31 +24,27 @@ def get_metrics():
     file_size = 0
     line_count = 0
 
-    status_codes = {
-            "200": 0,
-            "301": 0,
-            "400": 0,
-            "401": 0,
-            "403": 0,
-            "404": 0,
-            "405": 0,
-            "500": 0
-            }
+    status_codes = {}
 
     try:
         for line in sys.stdin:
-            for j in status_codes:
-                if j in line:
-                    status_codes[j] += 1
             status = line.strip("\n").split(" ")
-            if line_count > 0 and line_count % 10 == 0:
-                print_data(status_codes, file_size)
+            code = status[-2]
 
-            file_size += int(status[-1])
+            if code not in status_codes:
+                status_codes[code] = 1
+            else:
+                status_codes[code] += 1
+
+            if line_count > 0 and line_count % 10 == 0:
+                print_data(dict(sorted(status_codes.items())), file_size)
+
+            if status[-1].isnumeric():
+                file_size += int(status[-1])
             line_count += 1
 
     except KeyboardInterrupt:
-        print_data(status_codes, file_size)
+        print_data(dict(sorted(status_codes.items())), file_size)
         raise
 
 
