@@ -22,3 +22,7 @@ class TestBaseClass(unittest.TestCase):
 
     def test_base_initialization_no_value_3(self):
         self.assertEqual(self.base.id, 3)
+
+
+if __name__ == "__main__":
+    unittest.main()
