@@ -56,12 +56,10 @@ class TestRectangleValidation(unittest.TestCase):
         self.rectangle = Rectangle(5, 4, 2, 6, 12)
 
     def test_validate_width_value_type(self):
-
         with self.assertRaises(TypeError):
             self.rectangle.width = "2"
 
     def test_validate_width_less_than_1(self):
-        
         with self.assertRaises(ValueError):
             self.rectangle.width = -1
 
@@ -120,7 +118,8 @@ class TestRectangleMethods(unittest.TestCase):
     def test_update_method_with_args(self):
         self.rectangle = Rectangle(10, 10, 10, 10)
 
-        self.assertEqual(str(self.rectangle), f"[Rectangle] ({self.rectangle.id}) 10/10 - 10/10")
+        message = f"[Rectangle] ({self.rectangle.id}) 10/10 - 10/10"
+        self.assertEqual(str(self.rectangle), message)
         self.rectangle.update(89)
         self.assertEqual(str(self.rectangle), "[Rectangle] (89) 10/10 - 10/10")
         self.rectangle.update(89, 2)
@@ -135,11 +134,14 @@ class TestRectangleMethods(unittest.TestCase):
     def test_update_method_with_kwargs(self):
         self.rectangle = Rectangle(10, 10, 10, 10)
 
-        self.assertEqual(str(self.rectangle), f"[Rectangle] ({self.rectangle.id}) 10/10 - 10/10")
+        message = f"[Rectangle] ({self.rectangle.id}) 10/10 - 10/10"
+        self.assertEqual(str(self.rectangle), message)
         self.rectangle.update(height=1)
-        self.assertEqual(str(self.rectangle), f"[Rectangle] ({self.rectangle.id}) 10/10 - 10/1")
+        message = f"[Rectangle] ({self.rectangle.id}) 10/10 - 10/1"
+        self.assertEqual(str(self.rectangle), message)
         self.rectangle.update(width=1, x=2)
-        self.assertEqual(str(self.rectangle), f"[Rectangle] ({self.rectangle.id}) 2/10 - 1/1")
+        message = f"[Rectangle] ({self.rectangle.id}) 2/10 - 1/1"
+        self.assertEqual(str(self.rectangle), message)
         self.rectangle.update(y=1, width=2, x=3, id=89)
         self.assertEqual(str(self.rectangle), f"[Rectangle] (89) 3/1 - 2/1")
         self.rectangle.update(x=1, height=2, y=3, width=4)
