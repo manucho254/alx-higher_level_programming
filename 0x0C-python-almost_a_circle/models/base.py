@@ -4,7 +4,7 @@
 """
 
 
-class Base:
+class Base():
     """ base class for all other classes
     """
     __nb_objects = 0
@@ -15,8 +15,8 @@ class Base:
                 id: integer value
         """
 
-        if id is not None:
-            self.id = id
-        else:
+        if id is None:
             type(self).__nb_objects += 1
             self.id = self.__nb_objects
+        else:
+            self.id = id

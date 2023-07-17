@@ -1,8 +1,11 @@
+#!/usr/bin/activate
+
 """ tests for Base Model
 """
 import unittest
 
 from models.base import Base
+
 
 class TestBaseClass(unittest.TestCase):
 
@@ -22,6 +25,9 @@ class TestBaseClass(unittest.TestCase):
 
     def test_base_initialization_no_value_3(self):
         self.assertEqual(self.base.id, 3)
+
+    def tearDown(self):
+        del self.base
 
 
 if __name__ == "__main__":
