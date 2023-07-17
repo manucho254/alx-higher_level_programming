@@ -1,2 +1,3 @@
 - Test Rectangle Class
 - Add Validation tests In Rectangle Class
+- test Area method in rectangle class
