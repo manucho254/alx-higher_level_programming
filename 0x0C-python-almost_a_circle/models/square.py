@@ -20,6 +20,23 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
+    @property
+    def size(self):
+        """ get size of a square.
+            Return:
+                  the size of a square.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """ update the size of a square.
+            Args:
+                size: new size of a square.
+        """
+        self.width = size
+        self.height = size
+
     def __str__(self):
         """ string representation of Square class.
             Return:
