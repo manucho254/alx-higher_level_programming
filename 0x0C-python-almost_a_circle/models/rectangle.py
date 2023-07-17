@@ -137,13 +137,38 @@ class Rectangle(Base):
         """
         for x in range(self.__height):
             if self.__y >= 0:
-                print("\n" * self.__y , end="")
+                print("\n" * self.__y, end="")
                 self.__y = 0
             if self.__x >= 0:
                 print(" " * self.__x, end="")
             for _ in range(self.__width):
                 print("#", end="")
             print("")
+
+    def update(self, *args):
+        """ assign arguments to attributes
+            Args:
+                args: an array of arguments.
+            Desc:
+                1st argument should be the id attribute
+                2nd argument should be the width attribute
+                3rd argument should be the height attribute
+                4th argument should be the x attribute
+                5th argument should be the y attribute
+        """
+
+        length = len(args)  # length of args
+        for x in range(length):
+            if x == 0:
+                self.id = args[x]
+            if x == 1:
+                self.width = args[x]
+            if x == 2:
+                self.height = args[x]
+            if x == 3:
+                self.x = args[x]
+            if x == 4:
+                self.y = args[x]
 
     def __str__(self):
         """ Represent Rectangle instance as a string
@@ -153,4 +178,5 @@ class Rectangle(Base):
         dimension = f"{self.__width}/{self.__height}"
         position = f"{self.__x}/{self.__y}"
         message = f"[Rectangle] ({self.id}) {position} - {dimension}"
+
         return message
