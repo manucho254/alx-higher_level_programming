@@ -145,10 +145,11 @@ class Rectangle(Base):
                 print("#", end="")
             print("")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assign arguments to attributes
             Args:
                 args: an array of arguments.
+                kwargs: dict of key word arguments.
             Desc:
                 1st argument should be the id attribute
                 2nd argument should be the width attribute
@@ -157,18 +158,31 @@ class Rectangle(Base):
                 5th argument should be the y attribute
         """
 
-        length = len(args)  # length of args
-        for x in range(length):
-            if x == 0:
-                self.id = args[x]
-            if x == 1:
-                self.width = args[x]
-            if x == 2:
-                self.height = args[x]
-            if x == 3:
-                self.x = args[x]
-            if x == 4:
-                self.y = args[x]
+        length_args = len(args)  # length of args
+
+        if length_args > 0:
+            for x in range(length_args):
+                if x == 0:
+                    self.id = args[x]
+                if x == 1:
+                    self.width = args[x]
+                if x == 2:
+                    self.height = args[x]
+                if x == 3:
+                    self.x = args[x]
+                if x == 4:
+                    self.y = args[x]
+        else:
+            if kwargs.get("id"):
+                self.id = kwargs.get("id")
+            if kwargs.get("width"):
+                self.width = kwargs.get("width")
+            if kwargs.get("height"):
+                self.height = kwargs.get("height")
+            if kwargs.get("x"):
+                self.x = kwargs.get("x")
+            if kwargs.get("y"):
+                self.y = kwargs.get("y")
 
     def __str__(self):
         """ Represent Rectangle instance as a string
