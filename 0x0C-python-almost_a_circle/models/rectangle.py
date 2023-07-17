@@ -139,3 +139,13 @@ class Rectangle(Base):
             for _ in range(self.__width):
                 print("#", end="")
             print("")
+
+    def __str__(self):
+        """ Represent Rectangle instance as a string
+            Return:
+                  string representation of Rectangle
+        """
+        dimension = f"{self.__width}/{self.__height}"
+        position = f"{self.__x}/{self.__y}"
+        message = f"[Rectangle] ({self.id}) {position} - {dimension}"
+        return message

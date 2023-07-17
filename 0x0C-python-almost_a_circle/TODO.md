@@ -2,3 +2,4 @@
 - Add Validation tests In Rectangle Class
 - test Area method in rectangle class
 - test display function
+- test __str__ method
