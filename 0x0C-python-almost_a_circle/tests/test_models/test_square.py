@@ -58,6 +58,35 @@ class TestSquareMethods(unittest.TestCase):
 
         self.assertEqual(self.square.size, 8)
 
+    def test_update_method_with_args(self):
+
+        message = f"[Square] ({self.square.id}) 0/0 - 5"
+        self.assertEqual(str(self.square), message)
+        self.square.update(10)
+        message = f"[Square] ({self.square.id}) 0/0 - 5"
+        self.assertEqual(str(self.square), message)
+        self.square.update(1, 2)
+        message = f"[Square] ({self.square.id}) 0/0 - 2"
+        self.assertEqual(str(self.square), message)
+        self.square.update(1, 2, 3)
+        message = f"[Square] ({self.square.id}) 3/0 - 2"
+        self.assertEqual(str(self.square), message)
+        self.square.update(1, 2, 3, 4)
+        message = f"[Square] ({self.square.id}) 3/4 - 2"
+        self.assertEqual(str(self.square), message)
+
+    def test_update_method_with_kwargs(self):
+        self.square = Square(5) 
+
+        self.square.update(x=12)
+        message = f"[Square] ({self.square.id}) 12/0 - 5"
+        self.assertEqual(str(self.square), message)
+        self.square.update(size=7, y=1)
+        message = f"[Square] ({self.square.id}) 12/1 - 7"
+        self.assertEqual(str(self.square), message)
+        self.square.update(size=7, id=89, y=1)
+        message = f"[Square] (89) 12/1 - 7"
+        self.assertEqual(str(self.square), message)
 
 if __name__ == "__main__":
     unittest.main()
