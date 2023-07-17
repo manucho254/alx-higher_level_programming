@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-
 """ tests for rectangle class
 """
 import unittest
+from unittest.mock import patch
+import io
+import sys
 
 from models.rectangle import Rectangle
 
 
-class TestRectangleClass(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
 
     def setUp(self):
         self.rectangle = Rectangle(5, 4, 2, 6, 12)
@@ -47,13 +49,77 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.rectangle.y, 6)
         self.assertEqual(self.rectangle.id, 3)
 
-    def test_initialize_rectangle_all_arguments(self):
 
-        self.assertEqual(self.rectangle.width, 5)
-        self.assertEqual(self.rectangle.height, 4)
-        self.assertEqual(self.rectangle.x, 2)
-        self.assertEqual(self.rectangle.y, 6)
-        self.assertEqual(self.rectangle.id, 12)
+class TestRectangleValidation(unittest.TestCase):
+
+    def setUp(self):
+        self.rectangle = Rectangle(5, 4, 2, 6, 12)
+
+    def test_validate_width_value_type(self):
+
+        with self.assertRaises(TypeError):
+            self.rectangle.width = "2"
+
+    def test_validate_width_less_than_1(self):
+        
+        with self.assertRaises(ValueError):
+            self.rectangle.width = -1
+
+    def test_validate_height_value_type(self):
+
+        with self.assertRaises(TypeError):
+            self.rectangle.height = "2"
+
+    def test_validate_height_less_than_1(self):
+        with self.assertRaises(ValueError):
+            self.rectangle.height = -1
+
+    def test_validate_x_value_type(self):
+        with self.assertRaises(TypeError):
+            self.rectangle.y = {8, 9}
+
+    def test_validate_x_value_type(self):
+        with self.assertRaises(ValueError):
+            self.rectangle.x = -4
+
+    def test_validate_y_value_type(self):
+        with self.assertRaises(TypeError):
+            self.rectangle.y = [1, 2]
+
+    def test_validate_y_value_type(self):
+        with self.assertRaises(ValueError):
+            self.rectangle.y = -2
+
+
+class TestRectangleMethods(unittest.TestCase):
+
+    def setUp(self):
+        self.rectangle = Rectangle(5, 4, 2, 6, 12)
+        self.area = self.rectangle.area()
+        self._old_stdout = sys.stdout
+        sys.stdout = io.TextIOWrapper(io.BytesIO(), sys.stdout.encoding)
+
+    def test_get_area(self):
+        self.assertEqual(self.area, 20)
+
+    def test_get_area_type(self):
+        self.assertIsInstance(self.area, int)
+
+    def test_display_rectangle(self):
+        self.rectangle.display()
+        sys.stdout.seek(0)
+        msg = "\n\n\n\n\n\n  #####\n  #####\n  #####\n  #####\n"
+        self.assertEqual(sys.stdout.read(), msg)
+
+    def test_rectangle_string_representation(self):
+        r1 = Rectangle(5, 5, 1)
+        r2 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r1), f"[Rectangle] ({r1.id}) 1/0 - 5/5")
+        self.assertEqual(str(r2), f"[Rectangle] (12) 2/1 - 4/6")
+
+    def tearDown(self):
+        sys.stdout.close()
+        sys.stdout = self._old_stdout
 
 
 if __name__ == "__main__":

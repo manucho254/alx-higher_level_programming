@@ -136,6 +136,11 @@ class Rectangle(Base):
         """ print rectangle instance using character #
         """
         for x in range(self.__height):
+            if self.__y >= 0:
+                print("\n" * self.__y , end="")
+                self.__y = 0
+            if self.__x >= 0:
+                print(" " * self.__x, end="")
             for _ in range(self.__width):
                 print("#", end="")
             print("")
