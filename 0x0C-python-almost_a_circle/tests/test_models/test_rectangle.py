@@ -154,7 +154,6 @@ class TestRectangleMethods(unittest.TestCase):
         self.assertEqual(str(self.rectangle), message)
         message = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
         to_dict = self.rectangle.to_dictionary()
-        print(to_dict)
         self.assertEqual(to_dict, message)
         self.assertIsInstance(to_dict, dict)
 
