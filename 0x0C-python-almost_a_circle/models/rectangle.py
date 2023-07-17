@@ -189,8 +189,8 @@ class Rectangle(Base):
             Return:
                   a dictionary representation of Rectangle.
         """
-        new_dict = {"x": self.id, "y": self.y, "id": self.id,
-                "height": self.height, "width": self.width}
+        new_dict = {"x": self.id, "y": self.y, "id": self.id}
+        new_dict.update({"height": self.height, "width": self.width})
 
         return new_dict
 

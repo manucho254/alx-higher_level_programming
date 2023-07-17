@@ -75,8 +75,8 @@ class Square(Rectangle):
             Return:
                   a dictionary representation of Square.
         """
-        new_dict = {'id': self.id, 'x': self.x,
-                'size': self.size, 'y': self.y}
+        new_dict = {'id': self.id, 'x': self.x}
+        new_dict.update({'size': self.size, 'y': self.y})
 
         return new_dict
 
