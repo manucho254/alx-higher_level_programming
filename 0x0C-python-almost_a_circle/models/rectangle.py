@@ -19,9 +19,25 @@ class Rectangle(Base):
                  id: Object id
         """
         super().__init__(id)
+        if not isinstance(width, int):
+            raise TypeError(f"width must be an integer")
+        if width < 1:
+            raise ValueError(f"width must be > 0")
         self.__width = width
+        if not isinstance(height, int):
+            raise TypeError(f"height must be an integer")
+        if height < 1:
+             raise ValueError(f"height must be > 0")
         self.__height = height
+        if not isinstance(x, int):
+            raise TypeError(f"x must be an integer")
+        if x < 0:
+            raise ValueError(f"x must be >= 0")
         self.__x = x
+        if not isinstance(y, int):
+            raise TypeError(f"y must be an integer")
+        if y < 0:
+            raise ValueError(f"y must be >= 0")
         self.__y = y
 
     @property
@@ -38,6 +54,10 @@ class Rectangle(Base):
             Args:
                 width: new rectangle width
         """
+        if not isinstance(width, int):
+            raise TypeError(f"width must be an integer")
+        if width < 1:
+            raise ValueError(f"width must be > 0")
 
         self.__width = width
 
@@ -47,6 +67,7 @@ class Rectangle(Base):
             Return:
                    height of the rectangle
         """
+        
         return self.__height
 
     @height.setter
@@ -55,6 +76,10 @@ class Rectangle(Base):
             Args:
                 height: height of a rectangle
         """
+        if not isinstance(height, int):
+            raise TypeError(f"height must be an integer")
+        if height < 1:
+            raise ValueError(f"height must be > 0")
 
         self.__height = height
 
@@ -64,7 +89,6 @@ class Rectangle(Base):
             Return:
                   xaxis position.
         """
-
         return self.__x
 
     @x.setter
@@ -73,6 +97,10 @@ class Rectangle(Base):
             Args:
                 x: new xaxis value of rectangle
         """
+        if not isinstance(x, int):
+            raise TypeError(f"x must be an integer")
+        if x < 0:
+            raise ValueError(f"x must be >= 0")
 
         self.__x = x
 
@@ -91,5 +119,9 @@ class Rectangle(Base):
             Args:
                 y: new yaxis value of rectangle
         """
+        if not isinstance(y, int):
+            raise TypeError(f"y must be an integer")
+        if y < 0:
+            raise ValueError(f"y must be >= 0")
 
         self.__y = y

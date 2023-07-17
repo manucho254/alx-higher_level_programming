@@ -1,0 +1,2 @@
+- Test Rectangle Class
+- Add Validation tests In Rectangle Class
