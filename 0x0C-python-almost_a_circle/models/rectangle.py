@@ -184,6 +184,16 @@ class Rectangle(Base):
             if kwargs.get("y"):
                 self.y = kwargs.get("y")
 
+    def to_dictionary(self):
+        """ get dictionary representation of Rectangle.
+            Return:
+                  a dictionary representation of Rectangle.
+        """
+        new_dict = {"x": self.id, "y": self.y, "id": self.id,
+                "height": self.height, "width": self.width}
+
+        return new_dict
+
     def __str__(self):
         """ Represent Rectangle instance as a string
             Return:

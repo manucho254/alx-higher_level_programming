@@ -88,5 +88,16 @@ class TestSquareMethods(unittest.TestCase):
         message = f"[Square] (89) 12/1 - 7"
         self.assertEqual(str(self.square), message)
 
+    def test_to_dictionary_method(self):
+        self.square = Square(10, 2, 1)
+
+        message = f"[Square] ({self.square.id}) 2/1 - 10"
+        self.assertEqual(str(self.square), message)
+        message = {'id': self.square.id, 'x': 2, 'size': 10, 'y': 1}
+        to_dict = self.square.to_dictionary()
+        self.assertEqual(to_dict, message)
+        self.assertIsInstance(to_dict, dict)
+
+
 if __name__ == "__main__":
     unittest.main()

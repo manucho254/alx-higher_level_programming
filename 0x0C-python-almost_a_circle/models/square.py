@@ -70,6 +70,16 @@ class Square(Rectangle):
             if kwargs.get("y"):
                 self.y = kwargs.get("y")
 
+    def to_dictionary(self):
+        """ get dictionary representation of Sqaure.
+            Return:
+                  a dictionary representation of Square.
+        """
+        new_dict = {'id': self.id, 'x': self.x,
+                'size': self.size, 'y': self.y}
+
+        return new_dict
+
     def __str__(self):
         """ string representation of Square class.
             Return:

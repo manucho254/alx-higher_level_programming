@@ -147,6 +147,17 @@ class TestRectangleMethods(unittest.TestCase):
         self.rectangle.update(x=1, height=2, y=3, width=4)
         self.assertEqual(str(self.rectangle), f"[Rectangle] (89) 1/3 - 4/2")
 
+    def test_to_dictionary_method(self):
+        self.rectangle = Rectangle(10, 2, 1, 9, 1)
+
+        message = f"[Rectangle] (1) 1/9 - 10/2"
+        self.assertEqual(str(self.rectangle), message)
+        message = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        to_dict = self.rectangle.to_dictionary()
+        print(to_dict)
+        self.assertEqual(to_dict, message)
+        self.assertIsInstance(to_dict, dict)
+
     def tearDown(self):
         sys.stdout.close()
         sys.stdout = self._old_stdout
