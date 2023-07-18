@@ -85,4 +85,4 @@ class Base():
 
         if dummy:
             dummy.update(**dictionary)
-            return dummy
+        return dummy
