@@ -69,3 +69,23 @@ class Base():
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ convert dictionary to class instance
+            Args:
+                dictionary: a dict object
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        dummy_square = Square(3, 1, 3)
+        dummy_rectangle = Rectangle(3, 5, 1)
+
+        if dictionary.get("size"):
+            dummy_square.update(**dictionary)
+            return dummy_square
+
+        if dictionary.get("width"):
+            dummy_rectangle.update(**dictionary)
+            return dummy_rectangle
