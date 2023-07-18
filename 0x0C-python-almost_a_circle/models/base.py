@@ -77,7 +77,7 @@ class Base():
                 dictionary: a dict object
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(3, 1, 3)
+            dummy = cls(3, 1)
 
         if cls.__name__ == "Square":
             dummy = cls(3)
