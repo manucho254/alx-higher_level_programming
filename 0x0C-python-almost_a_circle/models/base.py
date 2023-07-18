@@ -33,7 +33,10 @@ class Base():
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return json.dumps([])
         else:
-            return json.dumps(list_dictionaries)
+            try:
+                return json.dumps(list_dictionaries)
+            except Exception as e:
+                return json.dumps([])
 
     @classmethod
     def save_to_file(cls, list_objs):
