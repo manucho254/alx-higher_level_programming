@@ -33,7 +33,7 @@ class Base():
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
-            return str(json.dumps(list(list_dictionaries)))
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -76,18 +76,12 @@ class Base():
             Args:
                 dictionary: a dict object
         """
-        from models.rectangle import Rectangle
-        from models.square import Square
+        dummy = None
+        if cls.__name__ == "Rectangle":
+            dummy = cls(3, 1, 3)
 
-        dummy_square = Square(3, 1, 3)
-        dummy_rectangle = Rectangle(3, 5, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(3)
 
-        if dictionary.get("size"):
-            dummy_square.update(**dictionary)
-            return dummy_square
-
-        if dictionary.get("width"):
-            dummy_rectangle.update(**dictionary)
-            return dummy_rectangle
-
-        return cls()
+        dummy.update(**dictionary) 
+        return dummy
