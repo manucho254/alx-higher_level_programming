@@ -85,3 +85,35 @@ class Base():
         dummy.update(**dictionary)
 
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ load data from json file and create new objects
+            Return:
+                  a list of instances.
+        """
+        arr = []
+        if cls.__name__ == "Rectangle":
+            try:
+                with open("Rectangle.json", "r") as my_file:
+                    data = my_file.read()
+                    arr = cls.from_json_string(data)
+            except Exception as e:
+                arr = []
+        if cls.__name__ == "Square":
+            try:
+                with open("Square.json", "r") as my_file:
+                    data = my_file.read()
+                    arr = cls.from_json_string(data)
+            except Exception as e:
+                arr = []
+
+        if len(arr) == 0:
+            return []
+
+        new_arr = []
+        for x in arr:
+            obj = cls.create(**x)
+            new_arr.append(obj)
+
+        return new_arr
