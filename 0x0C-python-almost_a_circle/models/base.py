@@ -42,17 +42,17 @@ class Base():
 
         arr = []
 
-        if list_objs is None:
+        if list_objs is None or len(list_objs) == 0:
             with open("Rectangle.json", "w") as my_file:
                 my_file.write(str("[]"))
 
             with open("Square.json", "w") as my_file:
                 my_file.write(str("[]"))
         else:
-            for x in list_objs:
-                new_dict = x.to_dictionary()
+            for obj in list_objs:
+                new_dict = obj.to_dictionary()
                 arr.extend(json.loads(cls.to_json_string([new_dict])))
-                file_name = x.__class__.__name__
+                file_name = obj.__class__.__name__
 
                 with open(f"{file_name}.json", "w") as my_file:
                     my_file.write(json.dumps(arr))
