@@ -54,5 +54,5 @@ class Base():
                 arr.extend(json.loads(cls.to_json_string([new_dict])))
                 file_name = x.__class__.__name__
 
-                with open(if"{file_name}.json", "w") as my_file:
+                with open(f"{file_name}.json", "w") as my_file:
                     my_file.write(json.dumps(arr))
