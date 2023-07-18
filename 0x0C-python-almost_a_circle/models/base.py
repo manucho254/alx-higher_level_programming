@@ -89,3 +89,5 @@ class Base():
         if dictionary.get("width"):
             dummy_rectangle.update(**dictionary)
             return dummy_rectangle
+
+        return cls()
