@@ -76,13 +76,12 @@ class Base():
             Args:
                 dictionary: a dict object
         """
-        dummy = None
         if cls.__name__ == "Rectangle":
             dummy = cls(3, 1, 3)
 
         if cls.__name__ == "Square":
             dummy = cls(3)
 
-        if dummy:
-            dummy.update(**dictionary)
+        dummy.update(**dictionary)
+
         return dummy
