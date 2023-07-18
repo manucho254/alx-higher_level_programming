@@ -56,3 +56,16 @@ class Base():
 
                 with open(f"{file_name}.json", "w") as my_file:
                     my_file.write(json.dumps(arr))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ convert json string to list
+            Args:
+                json_string: JSON string representation
+            Return:
+                a list of dictionaries else return an empty list
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+
+        return json.loads(json_string)

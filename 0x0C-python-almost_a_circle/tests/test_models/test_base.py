@@ -25,7 +25,7 @@ class TestBase(unittest.TestCase):
         res = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
         self.assertEqual(json_dictionary, res)
 
-    def test_convert_to_json_string(self):
+    def test_save_json_string_to_file_with_objects(self):
         Rectangle.save_to_file([r1, r2])
 
         with open("Rectangle.json", "r") as file:
@@ -34,6 +34,33 @@ class TestBase(unittest.TestCase):
             self.assertEqual(json.loads(data), res)
             self.assertIsInstance(json.loads(data), list)
 
+    def test_save_json_string_to_file_without_objects(self):
+        Rectangle.save_to_file(None)
+
+        with open("Rectangle.json", "r") as file:
+            data = file.read()
+            res = []
+            self.assertEqual(json.loads(data), res)
+            self.assertIsInstance(json.loads(data), list)
+
+    def test_json_string_to_list(self):
+        
+        list_input = [
+                {'id': 89, 'width': 10, 'height': 4},
+                {'id': 7, 'width': 1, 'height': 7}
+                ]
+
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertIsInstance(list_input, list)
+        self.assertIsInstance(json_list_input, str)
+        self.assertIsInstance(list_output, list)
+
+    def test_json_to_list_with_none_value(self):
+
+        list_output = Rectangle.from_json_string(None)
+        self.assertEqual(list_output, [])
+        self.assertIsInstance(list_output, list)
 
 if __name__ == "__main__":
     unittest.main()
