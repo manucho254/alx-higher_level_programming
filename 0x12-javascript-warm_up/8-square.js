@@ -9,7 +9,7 @@ if (Number.isInteger(result)) {
   for (x = 0; x < result; x++) {
     word = '';
     for (y = 0; y < result; y++) {
-      word += 'x';
+      word += 'X';
     }
     console.log(word);
   }
