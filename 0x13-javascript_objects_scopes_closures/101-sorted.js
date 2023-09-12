@@ -8,7 +8,7 @@
 const dict = require('./101-data').dict; // import object
 const newDict = {};
 
-for ([key, value] of Object.entries(dict)) {
+for (const [key, value] of Object.entries(dict)) {
   if (newDict[value]) newDict[value].push(key);
   else newDict[value] = [key];
 }
