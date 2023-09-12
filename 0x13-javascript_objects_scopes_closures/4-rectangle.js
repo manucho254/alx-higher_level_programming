@@ -51,7 +51,7 @@ class Rectangle {
     this.height = this.width;
     this.width = tmp;
   }
-  
+
   /**
    * multiply the width and the height of the rectangle by 2
    */
