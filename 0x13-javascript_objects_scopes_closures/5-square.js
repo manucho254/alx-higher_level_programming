@@ -12,15 +12,7 @@ class Square extends Rectangle {
    */
 
   constructor (size) {
-    super();
-    /**
-     * @property {Number} width, Square width.
-     */
-    this.width = size;
-    /**
-     * @property {Number} height, Square width.
-     */
-    this.height = size;
+    super(size, size);
   }
 }
 
