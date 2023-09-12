@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script to check the styles of js files
+semistandard ./*.js

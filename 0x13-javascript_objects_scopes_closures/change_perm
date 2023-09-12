@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script to chengte permision of javascript files
+chmod +x *.js
