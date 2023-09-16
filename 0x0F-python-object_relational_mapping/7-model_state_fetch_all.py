@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """ Script that lists all State objects from the database hbtn_0e_6_usa.
 
     - script takes 3 arguments: mysql username, mysql password and database name
