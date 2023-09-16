@@ -29,6 +29,9 @@ session = Session(engine)
 
 class State(Base):
     """ class state that defines a state
+        Attributes:
+                  id: state id
+                  name: state name
     """
     __tablename__ = 'states'
     id = Column(Integer, autoincrement=True, unique=True, primary_key=True)
