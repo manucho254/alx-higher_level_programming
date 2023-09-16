@@ -21,8 +21,9 @@ from model_state import Base, State
 if __name__ == "__main__":
 
     args = sys.argv  # list of arguments
-    my_db = 'mysql+mysqldb://{}:{}@localhost:3306/{}\
-            '.format(args[1], args[2], args[3])
+    my_db = ('mysql+mysqldb://{}:{}@localhost:3306/{}'
+             .format(args[1], args[2], args[3])
+             )
     engine = create_engine(my_db, pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)
