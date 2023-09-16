@@ -17,14 +17,12 @@
 import sys
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import Session
 
 args = sys.argv  # list of arguments
 my_db = 'mysql+mysqldb://{}:{}@localhost/{}'.format(args[1], args[2], args[3])
 engine = create_engine(my_db, pool_pre_ping=True)
 Base = declarative_base()
 Base.metadata.create_all(engine)
-session = Session(engine)
 
 
 class State(Base):
@@ -36,6 +34,3 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, autoincrement=True, unique=True, primary_key=True)
     name = Column(String(128))
-
-
-session.close()
