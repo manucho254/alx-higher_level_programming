@@ -7,8 +7,10 @@
 """
 
 import sys
+
 from sqlalchemy import create_engine, Column, Integer, String, asc
 from sqlalchemy.orm import Session
+
 from model_state import Base, State
 
 if __name__ == "__main__":
