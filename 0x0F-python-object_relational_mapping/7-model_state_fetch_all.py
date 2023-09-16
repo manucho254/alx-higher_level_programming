@@ -24,5 +24,5 @@ if __name__ == "__main__":
 
     # print all states
     for state in states:
-        print("{}: {}".format(row.id, row.name))
+        print("{}: {}".format(state.id, state.name))
     session.close()
