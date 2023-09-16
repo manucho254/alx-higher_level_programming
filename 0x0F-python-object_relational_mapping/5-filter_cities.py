@@ -17,7 +17,6 @@ import MySQLdb
 
 if __name__ == "__main__":
     args = sys.argv
-    cities = set()  # a set to hold all the city names
     conn = MySQLdb.connect(host="localhost", port=3306,
                            user=f"{args[1]}", passwd=f"{args[2]}",
                            db=f"{args[3]}", charset="utf8")
@@ -29,9 +28,16 @@ if __name__ == "__main__":
                 = ( SELECT id FROM states WHERE states.name = %s )\
                 ORDER BY cities.id ASC', (args[4], ))
     query_rows = cur.fetchall()
-    # add city names to set
-    [cities.add(city[0]) for city in query_rows]
-    length = len(cities) - 1  # length of cities set
+    # # a list to hold all the city names
+    cities = []
+    for city in query_rows:
+        if city[0] not in cities:
+            cities.append(city[0])
+
+    if len(cities) == 0:
+        print()
+        sys.exit()
+    length = len(cities) - 1  # length of cities list
     # print the city names
     for idx, city in enumerate(cities):
         if idx < length:
