@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
    python file that contains the class definition of a,
    State and an instance Base = declarative_base():
@@ -15,14 +14,11 @@
 """
 
 import sys
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 args = sys.argv  # list of arguments
-my_db = 'mysql+mysqldb://{}:{}@localhost/{}'.format(args[1], args[2], args[3])
-engine = create_engine(my_db, pool_pre_ping=True)
 Base = declarative_base()
-Base.metadata.create_all(engine)
 
 
 class State(Base):
