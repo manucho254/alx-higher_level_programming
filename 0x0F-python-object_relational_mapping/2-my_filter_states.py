@@ -23,7 +23,7 @@ if __name__ == "__main__":
                            db=f"{args[3]}", charset="utf8")
     cur = conn.cursor()
     # list all states in my database
-    query = "SELECT * FROM states WHERE name = '{}'\
+    query = "SELECT * FROM states WHERE BINARY name = '{}'\
              ORDER BY id ASC".format(args[4])
     cur.execute(query)
     query_rows = cur.fetchall()
