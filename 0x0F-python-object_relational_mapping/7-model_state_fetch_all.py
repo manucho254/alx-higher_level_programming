@@ -8,7 +8,7 @@
 
 import sys
 
-from sqlalchemy import create_engine, Column, Integer, String, asc
+from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import Session
 
 from model_state import Base, State
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session(engine)
     Base.metadata.create_all(engine)
 
-    query = session.query(State).order_by(asc(State.id))
+    query = session.query(State).order_by(State.id)
     for row in query.all():
         print("{}: {}".format(row.id, row.name))
     session.close()
