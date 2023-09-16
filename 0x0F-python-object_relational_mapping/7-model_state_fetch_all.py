@@ -17,9 +17,8 @@ if __name__ == "__main__":
     args = sys.argv  # list of arguments
     my_db = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(args[1], args[2], args[3])
     engine = create_engine(my_db, pool_pre_ping=True)
-
-    Base.metadata.create_all(engine)
     session = Session(engine)
+    Base.metadata.create_all(engine)
 
     query = session.query(State).order_by(asc(State.id))
     for row in query.all():
