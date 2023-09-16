@@ -22,8 +22,13 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)
 
+    # create a session
     session = Session()
+
+    # get the first state
     first = session.query(State).order_by(State.id).first()
+
+    # print nothing if state not found else print first
     if not first:
         print("Nothing")
     else:
