@@ -26,7 +26,7 @@ Base.metadata.create_all(engine)
 
 
 class State(Base):
-    """ class state that defines a state
+    """ class State that defines a state
         Attributes:
                   id: state id
                   name: state name
