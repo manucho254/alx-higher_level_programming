@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     # create a session
     session = Session()
-    
+
     # get all states
     states = session.query(State).order_by(State.id).all()
 
