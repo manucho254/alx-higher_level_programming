@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 """
-  Script that lists all State objects, and corresponding City objects, contained in the database hbtn_0e_101_usa
+  Script that lists all State objects,
+  and corresponding City objects,
+  contained in the database hbtn_0e_101_usa
 
-   - Script should take 3 arguments: mysql username, mysql password and database name
-   - The connection to your MySQL server must be to localhost on port 3306
+   - Script should take 3 arguments:
+     mysql username, mysql password and database name
+   - The connection to your MySQL server
+     must be to localhost on port 3306
    - You must use the cities relationship for all State objects
-   - Results must be sorted in ascending order by states.id and cities.id
+   - Results must be sorted in ascending
+     order by states.id and cities.id
 """
 
 import sys
