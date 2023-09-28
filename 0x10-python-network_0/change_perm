@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# change permision of all bash files
+
+chmod +x *.sh
