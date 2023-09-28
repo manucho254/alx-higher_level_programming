@@ -13,6 +13,10 @@ def find_peak(list_of_integers: list) -> int:
         return None
 
     length = len(list_of_integers)
+
+    if length == 1:
+        return list_of_integers[0]
+
     peak = None
 
     for x in range(length - 1):
