@@ -17,6 +17,12 @@ def find_peak(list_of_integers: list) -> int:
     if length == 1:
         return list_of_integers[0]
 
+    if length == 2:
+        if list_of_integers[0] >= list_of_integers[1]:
+            return list_of_integers[0]
+        else:
+            return list_of_integers[1]
+
     peak = None
 
     for x in range(length - 1):
