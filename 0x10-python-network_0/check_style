@@ -2,3 +2,4 @@
 # Check code style for .sh files
 
 shellcheck *.sh
+pycodestyle *.py
