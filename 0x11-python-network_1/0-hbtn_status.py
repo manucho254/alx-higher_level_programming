@@ -9,7 +9,6 @@ if __name__ == "__main__":
     with urlopen(url) as response:
         page_obj = response.read()
 
-        print(page_obj.decode("utf-8"))
         print("Body response:")
         print("    - type: {}".format(type(page_obj)))
         print("    - content: {}".format(page_obj))
