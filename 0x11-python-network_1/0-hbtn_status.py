@@ -12,5 +12,5 @@ if __name__ == "__main__":
         print("Body response:")
         print("    - type: {}".format(type(page_obj)))
         print("    - content: {}".format(page_obj))
-        content = str(page_obj).strip('b').strip("'")
+        content = page_obj.strip('b').strip("'")
         print("    - utf8 content: {}".format(content))
