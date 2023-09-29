@@ -30,4 +30,4 @@ if __name__ == "__main__":
 
     for commit in data:
         full_name = commit.get('commit').get('author').get("name")
-        print(commit.get("sha"), full_name)
+        print("{}: {}".format(commit.get("sha"), full_name))
