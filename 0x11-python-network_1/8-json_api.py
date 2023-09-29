@@ -19,7 +19,7 @@ if __name__ == "__main__":
         print("Not a valid JSON")
         sys.exit()
 
-    if isinstance(data, dict) and len(data) > 0:
+    if len(data) > 0:
         print("[{}] {}".format(data.get('id'), data.get('name')))
     else:
         print("No result")
