@@ -11,7 +11,11 @@ if __name__ == "__main__":
     args = sys.argv
 
     url = "http://0.0.0.0:5000/search_user"
-    response = requests.post(url, data={"q": args[1]})
+    query = ""
+    if len(args) > 1:
+        query = args[1]
+
+    response = requests.post(url, data={"q": query})
 
     try:
         data = response.json()
