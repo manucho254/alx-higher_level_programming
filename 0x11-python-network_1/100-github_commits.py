@@ -11,7 +11,7 @@ if __name__ == "__main__":
     args = sys.argv
 
     path = f"https://api.github.com/repos/"
-    args = f"{args[2]}/{args[1]}/commits?per_page=10"
+    args = f"{args[2]}/{args[1]}/commits"
     url = path + args
 
     if len(args) > 3:
@@ -26,7 +26,7 @@ if __name__ == "__main__":
         # send request to get commit data
         response = requests.get(url, headers={})
 
-    data = response.json()
+    data = response.json()[:10]
 
     for commit in data:
         full_name = commit.get('commit').get('author').get("name")
