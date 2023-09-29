@@ -13,11 +13,13 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     response = requests.post(url, data={"q": args[1]})
 
-    data = response.json()
-
-    if not isinstance(data, dict):
+    try:
+        data = response.json()
+    except Exception as e:
         print("Not a valid JSON")
-    elif isinstance(data, dict) and len(data) > 0:
+        sys.exit()
+
+    if isinstance(data, dict) and len(data) > 0:
         print("[{}] {}".format(data.get('id'), data.get('name')))
     else:
         print("No result")
